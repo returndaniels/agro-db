@@ -15,7 +15,7 @@ const tractorSchema = new mongoose.Schema(
           type: Date
         },
         description: {
-          type: Boolean,
+          type: String,
         },
         value: {
           type: Number
