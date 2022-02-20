@@ -1,0 +1,29 @@
+{
+  "name": "agro-db",
+  "version": "1.0.0",
+  "description": "Agro DB is your platform to manage and organize agricultural equipment in a simple and agile way.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/returndaniels/agro-db.git"
+  },
+  "keywords": [
+    "agro",
+    "trator",
+    "tractor",
+    "equipamentos",
+    "equipaments",
+    "data",
+    "Base",
+    "crud"
+  ],
+  "author": "Daniel Silva (returndaniels)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/returndaniels/agro-db/issues"
+  },
+  "homepage": "https://github.com/returndaniels/agro-db#readme"
+}
