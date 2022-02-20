@@ -91,7 +91,7 @@ const deleteTractor = async (req, res) => {
   try {
     const response = await Tractors.deleteOne({ name: req.body.name });
 
-    if (response.ok) {
+    if (response.deletedCount > 0) {
       res.status(204).json({
         message: "Deleted",
       });
