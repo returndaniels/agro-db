@@ -47,6 +47,7 @@ agro-db@1.0.0 /agro-db
 ├── cors@2.8.5
 ├── dotenv@16.0.0
 ├── express@4.17.3
+├── http@0.0.1-security
 ├── mongodb@4.4.0
 ├── mongoose@6.2.2
 └── nodemon@2.0.15
