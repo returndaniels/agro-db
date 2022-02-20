@@ -1,5 +1,5 @@
 
-const Tractors = require('../models/tractors');
+const Tractors = require('../models/tractor');
 
 const getTractors = async (req, res) => {
 	const tractors = await Tractors.find();
