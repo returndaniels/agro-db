@@ -4,7 +4,9 @@
   "description": "Agro DB is your platform to manage and organize agricultural equipment in a simple and agile way.",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,16 @@
   "bugs": {
     "url": "https://github.com/returndaniels/agro-db/issues"
   },
-  "homepage": "https://github.com/returndaniels/agro-db#readme"
+  "homepage": "https://github.com/returndaniels/agro-db#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongodb": "^4.4.0",
+    "mongoose": "^6.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
