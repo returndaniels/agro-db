@@ -5,10 +5,9 @@ const getTractors = async (req, res) => {
   try {
     const tractors = await Tractors.find();
     if (tractors) {
-      res.status(200).json({
-        message: "Found",
+      res.status(200).json(
         tractors,
-      });
+      );
     } else {
       res.status(400).json({
         message: "Bad request",
