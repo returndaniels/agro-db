@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 
 const appRouter = require('./routes/app.routes');
 const tractorsRouter = require('./routes/tractors.routes');
+const imagekitRouter = require('./routes/imagekit.routes');
 
 require('dotenv').config();
 
@@ -19,5 +20,6 @@ app.use(cors());
 
 app.use('/', appRouter);
 app.use('/tractors', tractorsRouter)
+app.use('/image/upload', imagekitRouter)
 
 server.listen(port, () => console.log(`Server has started.`));
