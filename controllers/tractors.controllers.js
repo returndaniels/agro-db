@@ -31,8 +31,8 @@ const createTractor = (req, res) => {
           res.status(409).json({ message: "Tractor name already exists." })
       })
 
-    const newTractor = new Tractors(req.body);
     const imageUrl = req.body.imageUrl || defaultImageUrl;
+    const newTractor = new Tractors({...req.body, imageUrl});
     newTractor
       .save()
       .then(async (result) => {
