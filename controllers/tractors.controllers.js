@@ -1,5 +1,6 @@
 
 const Tractors = require('../models/tractor');
+const { defaultImageUrl } = require('../constants.json')
 
 const getTractors = async (req, res) => {
   try {
@@ -31,6 +32,7 @@ const createTractor = (req, res) => {
       })
 
     const newTractor = new Tractors(req.body);
+    const imageUrl = req.body.imageUrl || defaultImageUrl;
     newTractor
       .save()
       .then(async (result) => {
@@ -38,7 +40,7 @@ const createTractor = (req, res) => {
           .save()
           .then((result) => {
             console.log(`Tractor created ${result}`)
-            res.status(201).json({ tractor: req.body, })
+            res.status(201).json({ tractor: {...req.body, imageUrl}, })
           })
           .catch((err) => {
             console.error(err)
