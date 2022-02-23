@@ -1,11 +1,12 @@
 var ImageKit = require("imagekit");
+require('dotenv').config();
 
 const auth = (req, res) => {
   try {
     const imagekit = new ImageKit({
-      publicKey : "public_DCbUaQ/hVTj/7d7mf5UOafVT9kI=",
-      privateKey : "private_IF574Svh5LyxUs6mdOxLpF9Jq0w=",
-      urlEndpoint : "https://ik.imagekit.io/returndaniels"
+      publicKey : process.env.IMAGE_KIT_PUBLIC_KEY,
+      privateKey : process.env.IMAGEKIT_PRIVATE_KEY,
+      urlEndpoint : process.env.IMAGEKIT_URI
     });
     const credentials = imagekit.getAuthenticationParameters()
 
