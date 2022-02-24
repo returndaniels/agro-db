@@ -1,5 +1,6 @@
 
 const Tractors = require('../models/tractor');
+const { sendNotification } = require("./onSignal.controllers");
 const { defaultImageUrl } = require('../constants.json')
 
 const getTractors = async (req, res) => {
@@ -40,6 +41,15 @@ const createTractor = (req, res) => {
           .save()
           .then((result) => {
             console.log(`Tractor created ${result}`)
+
+            sendNotification({ 
+              app_id: process.env.ONE_SIGNAL_API_ID,
+              contents: {"en": `Olá! um "${req.body.name}" acaba de ser adicionado ao AgroDB.`},
+              headings: {"en": "Um novo equipamento foi adicionado ao AgroDB."},
+              included_segments: ["Subscribed Users"],
+              channel_for_external_user_ids: "push"
+            });
+
             res.status(201).json({ tractor: {...req.body, imageUrl}, })
           })
           .catch((err) => {
